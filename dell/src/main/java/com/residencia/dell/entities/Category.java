@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -16,9 +17,9 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category")
     private Long categoryId;
-
-    @Size(max = 20)
-    @Column(name = "categoryname", length = 20)
+    
+  
+    @Column(name = "categoryname")
     private String categoryName;
 
     public Long getCategoryId() {
@@ -36,4 +37,5 @@ public class Category {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
+    
 }

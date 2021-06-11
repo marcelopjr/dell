@@ -1,17 +1,20 @@
 package com.residencia.dell.exceptions;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class ErroResposta {
+	
 	private Integer status;
 	private String titulo;
 	private LocalDateTime dataHora;
-
-	public ErroResposta(Integer status, String titulo, LocalDateTime dataHora) {
-		super();
+	private List<String> listError;
+ 
+	public ErroResposta(Integer status, String titulo, LocalDateTime dataHora, List<String> listError) {
 		this.status = status;
 		this.titulo = titulo;
 		this.dataHora = dataHora;
+		this.listError = listError;
 	}
 
 	public Integer getStatus() {
@@ -37,5 +40,15 @@ public class ErroResposta {
 	public void setDataHora(LocalDateTime dataHora) {
 		this.dataHora = dataHora;
 	}
+
+	public List<String> getListError() {
+		return listError;
+	}
+
+	public void setListError(List<String> listError) {
+		this.listError = listError;
+	}
+	
+	
 
 }
